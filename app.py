@@ -5,8 +5,8 @@ import torch
 import torch.nn as nn
 import cv2
 from numpy import random
-from com_ineuron_apparel.com_ineuron_utils.utils import decodeImage
-from com_ineuron_apparel.predictor_yolo_detector.detector_test import Detector
+from metadata.utils.utils import decodeImage
+from metadata.predictor_yolo_detector.detector_test import Detector
 from PIL import Image
 
 class ClientApp:
@@ -23,7 +23,7 @@ clApp = ClientApp()
 def predict_image(input_img):
 
     img = Image.fromarray(input_img)
-    img.save("./com_ineuron_apparel/predictor_yolo_detector/inference/images/"+ clApp.filename)
+    img.save("./metadata/predictor_yolo_detector/inference/images/"+ clApp.filename)
     resultant_img = clApp.objectDetection.detect_action()
                                                             
         
